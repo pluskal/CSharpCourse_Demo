@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29521.150
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookBook.DAL", "CookBook.DAL\CookBook.DAL.csproj", "{211ED53F-9ABC-4E6C-8D6C-47D69FA8C1C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookBook.DAL.Tests", "Tests\CookBook.DAL.Tests\CookBook.DAL.Tests.csproj", "{21BC8441-8676-4102-B475-659A1362B182}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6D2FFD44-ECE7-4F95-9B69-DB8FBBACD8D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{211ED53F-9ABC-4E6C-8D6C-47D69FA8C1C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211ED53F-9ABC-4E6C-8D6C-47D69FA8C1C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211ED53F-9ABC-4E6C-8D6C-47D69FA8C1C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211ED53F-9ABC-4E6C-8D6C-47D69FA8C1C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21BC8441-8676-4102-B475-659A1362B182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21BC8441-8676-4102-B475-659A1362B182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21BC8441-8676-4102-B475-659A1362B182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21BC8441-8676-4102-B475-659A1362B182}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21BC8441-8676-4102-B475-659A1362B182} = {6D2FFD44-ECE7-4F95-9B69-DB8FBBACD8D6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B09296C-7A71-42B3-89ED-2E341B3AA29B}
+	EndGlobalSection
+EndGlobal
