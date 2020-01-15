@@ -1,8 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using CookBook.DAL.Entity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace CookBook.DAL
 {
@@ -10,7 +8,6 @@ namespace CookBook.DAL
     {
         public CookBookDbContext()
         {
-
         }
 
         public CookBookDbContext(DbContextOptions<CookBookDbContext> contextOptions)
@@ -26,16 +23,15 @@ namespace CookBook.DAL
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(connectionString: @"Data Source = (LocalDb)\MSSQLLocalDB; Initial Catalog = CookBook; Integrated Security = SSPI; ");
-            }
+                optionsBuilder.UseSqlServer(
+                    @"Data Source = (LocalDb)\MSSQLLocalDB; Initial Catalog = CookBook; Integrated Security = SSPI; ");
             base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.SeedIngredients();
             base.OnModelCreating(modelBuilder);
         }
-
     }
 }
