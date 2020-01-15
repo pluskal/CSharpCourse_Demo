@@ -3,7 +3,7 @@ using CookBook.DAL.Enum;
 
 namespace CookBook.DAL.Entity
 {
-    public class RecipeIngredientAmountEntity : EntityBase
+    public class IngredientAmountEntity : EntityBase
     {
         public Guid RecipeId { get; set; }
         public RecipeEntity Recipe { get; set; }

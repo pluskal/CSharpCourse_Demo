@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using CookBook.DAL.Entity;
 using CookBook.DAL.Enum;
@@ -42,9 +43,9 @@ namespace CookBook.DAL.Tests
                 Description = "Sweet Summer Refreshing Lemonade",
                 FoodType = FoodType.Drink,
                 Duration = TimeSpan.FromMinutes(1),
-                Ingredients = new[]
+                Ingredients = new []
                 {
-                    new RecipeIngredientAmountEntity
+                    new IngredientAmountEntity
                     {
                         Amount = 1,
                         Unit = Unit.L,
@@ -54,7 +55,7 @@ namespace CookBook.DAL.Tests
                             Description = "Mineral"
                         }
                     },
-                    new RecipeIngredientAmountEntity
+                    new IngredientAmountEntity
                     {
                         Amount = 100,
                         Unit = Unit.G,
@@ -64,7 +65,7 @@ namespace CookBook.DAL.Tests
                             Description = "Brown"
                         }
                     },
-                    new RecipeIngredientAmountEntity
+                    new IngredientAmountEntity
                     {
                         Amount = 50,
                         Unit = Unit.Ml,
@@ -91,7 +92,13 @@ namespace CookBook.DAL.Tests
         [Fact]
         public void Get_Ingredient_IngredientRetrieved()
         {
-            var _ = _testContext.CookBookDbContextSUT.Ingredients.Single(i => i.Id == SeedingData.IngredientEntity.Id);
+            var _ = _testContext.CookBookDbContextSUT.Ingredients.Single(i => i.Id == SeedingData.IngredientMineralWaterEntity.Id);
+        }
+
+        [Fact]
+        public void Get_Recipe_RecipeRetrieved()
+        {
+            var _ = _testContext.CookBookDbContextSUT.Recipe.Single(i => i.Id == SeedingData.RecipeEntity.Id);
         }
     }
 }

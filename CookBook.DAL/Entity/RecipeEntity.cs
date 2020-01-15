@@ -10,6 +10,6 @@ namespace CookBook.DAL.Entity
         public string Description { get; set; }
         public TimeSpan Duration { get; set; }
         public FoodType FoodType { get; set; }
-        public ICollection<RecipeIngredientAmountEntity> Ingredients { get; set; }
+        public ICollection<IngredientAmountEntity> Ingredients { get; set; }
     }
 }

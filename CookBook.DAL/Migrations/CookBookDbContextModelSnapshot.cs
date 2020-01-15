@@ -59,7 +59,7 @@ namespace CookBook.DAL.Migrations
                     b.ToTable("Recipe");
                 });
 
-            modelBuilder.Entity("CookBook.DAL.Entity.RecipeIngredientAmountEntity", b =>
+            modelBuilder.Entity("CookBook.DAL.Entity.IngredientAmountEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -86,7 +86,7 @@ namespace CookBook.DAL.Migrations
                     b.ToTable("IngredientAmount");
                 });
 
-            modelBuilder.Entity("CookBook.DAL.Entity.RecipeIngredientAmountEntity", b =>
+            modelBuilder.Entity("CookBook.DAL.Entity.IngredientAmountEntity", b =>
                 {
                     b.HasOne("CookBook.DAL.Entity.IngredientEntity", "Ingredient")
                         .WithMany()

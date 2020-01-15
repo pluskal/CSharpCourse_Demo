@@ -18,7 +18,7 @@ namespace CookBook.DAL
 
         public DbSet<IngredientEntity> Ingredients { get; set; }
         public DbSet<RecipeEntity> Recipe { get; set; }
-        public DbSet<RecipeIngredientAmountEntity> IngredientAmount { get; set; }
+        public DbSet<IngredientAmountEntity> IngredientAmount { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -31,6 +31,8 @@ namespace CookBook.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.SeedIngredients();
+            modelBuilder.SeedRecipes();
+            modelBuilder.SeedIngredientAmounts();
             base.OnModelCreating(modelBuilder);
         }
     }
