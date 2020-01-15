@@ -14,5 +14,15 @@ namespace CookBook.BL.Mappers
                 Description = entity.Description
             };
         }
+
+        public static IngredientEntity MapEntity(IngredientDTO ingredient)
+        {
+            return new IngredientEntity()
+            {
+                Id = ingredient.Id,
+                Name = ingredient.Name,
+                Description = ingredient.Description
+            };
+        }
     }
 }

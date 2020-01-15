@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using CookBook.BL.DTO;
 using CookBook.BL.Mappers;
+using CookBook.DAL.Entity;
 using CookBook.DAL.Interfaces;
 
 namespace CookBook.BL.Repositories
@@ -30,6 +31,27 @@ namespace CookBook.BL.Repositories
             using (var dbx = _contextFactory.CreateDbContext())
             {
                 return Mapper.MapDto(dbx.Ingredients.Single(i=>i.Id==id));
+            }
+        }
+
+        public void Delete(Guid id)
+        {
+            using (var dbx = _contextFactory.CreateDbContext())
+            {
+                var ingredient = new IngredientEntity(){Id = id};
+                dbx.Ingredients.Remove(ingredient);
+            }
+        }
+
+
+        public IngredientDTO InsertOrUpdate(IngredientDTO ingredient)
+        {
+            using (var dbx = _contextFactory.CreateDbContext())
+            {
+                var ingredientEntity = dbx.Ingredients.Update(Mapper.MapEntity(ingredient)).Entity;
+                dbx.SaveChanges();
+
+                return Mapper.MapDto(ingredientEntity);
             }
         }
     }
