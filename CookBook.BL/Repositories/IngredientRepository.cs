@@ -11,15 +11,15 @@ namespace CookBook.BL.Repositories
 {
     public class IngredientRepository
     {
-        private readonly ICookBookDbContextFactory _contextFactory;
+        private readonly IDbContextFactory _contextFactory;
 
-        public IngredientRepository(ICookBookDbContextFactory contextFactory)
+        public IngredientRepository(IDbContextFactory contextFactory)
         {
             _contextFactory = contextFactory;
         }
         public IEnumerable<IngredientDTO> GetAll()
         {
-            using (var dbx = _contextFactory.CreateDbContext("CookBook"))
+            using (var dbx = _contextFactory.CreateDbContext())
             {
                 return dbx.Ingredients.Select(Mapper.MapDto).ToArray();
             }
@@ -27,7 +27,7 @@ namespace CookBook.BL.Repositories
 
         public IngredientDTO GetById(Guid id)
         {
-            using (var dbx = _contextFactory.CreateDbContext("CookBook"))
+            using (var dbx = _contextFactory.CreateDbContext())
             {
                 return Mapper.MapDto(dbx.Ingredients.Single(i=>i.Id==id));
             }

@@ -5,13 +5,13 @@ namespace CookBook.DAL.Tests
 {
     public class CookBookDbContextFixture<TFixture>
     {
-        public CookBookDbContextInMemoryFactory CookBookDbContextFactory { get; }
+        public DbContextInMemoryFactory DbContextFactory { get; }
         public CookBookDbContext CookBookDbContextSUT { get; }
 
         public CookBookDbContextFixture()
         {
-            CookBookDbContextFactory = new CookBookDbContextInMemoryFactory();
-            CookBookDbContextSUT = CookBookDbContextFactory.CreateDbContext(typeof(TFixture).Name);
+            DbContextFactory = new DbContextInMemoryFactory(typeof(TFixture).Name);
+            CookBookDbContextSUT = DbContextFactory.CreateDbContext();
             CookBookDbContextSUT.Database.EnsureCreated();
         }
     }

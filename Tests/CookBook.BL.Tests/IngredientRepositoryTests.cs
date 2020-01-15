@@ -12,8 +12,8 @@ namespace CookBook.BL.Tests
 
         public IngredientRepositoryTests()
         {
-            var dbContextFactory = new CookBookDbContextInMemoryFactory();
-            using (var dbx = dbContextFactory.CreateDbContext("CookBook"))
+            var dbContextFactory = new DbContextInMemoryFactory(nameof(IngredientRepositoryTests));
+            using (var dbx = dbContextFactory.CreateDbContext())
             {
                 dbx.Database.EnsureCreatedAsync().GetAwaiter().GetResult();
             }

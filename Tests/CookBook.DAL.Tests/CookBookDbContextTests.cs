@@ -27,7 +27,7 @@ namespace CookBook.DAL.Tests
             _testContext.CookBookDbContextSUT.SaveChanges();
 
             //Assert
-            using (var dbx = _testContext.CookBookDbContextFactory.CreateDbContext(nameof(CookBookDbContextTests)))
+            using (var dbx = _testContext.DbContextFactory.CreateDbContext())
             {
                 var _ = dbx.Ingredients.Single(i => i.Id == ingredient.Id);
             }
@@ -83,7 +83,7 @@ namespace CookBook.DAL.Tests
             _testContext.CookBookDbContextSUT.SaveChanges();
 
             //Assert
-            using (var dbx = _testContext.CookBookDbContextFactory.CreateDbContext(nameof(CookBookDbContextTests)))
+            using (var dbx = _testContext.DbContextFactory.CreateDbContext())
             {
                 var _ = dbx.Recipe.Single(i => i.Id == entity.Id);
             }
